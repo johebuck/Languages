@@ -1,0 +1,6 @@
+To run: java Dijkstra.graph <graph> <start> <end> where graph is any file with an adjacency list with 2 nodes and a weight
+        start is source and end is destination for finding shortest path.
+       
+        Graph provided is dijkstra.graph which implements graph used in previous assignments
+        
+Currently prints the original graph, the source node and destination node, almost finished finding shortest path.
