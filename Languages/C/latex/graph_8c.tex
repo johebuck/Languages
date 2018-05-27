@@ -1,0 +1,194 @@
+\hypertarget{graph_8c}{}\section{C\+:/\+Users/\+John/\+Desktop/code/graph.c File Reference}
+\label{graph_8c}\index{C\+:/\+Users/\+John/\+Desktop/code/graph.\+c@{C\+:/\+Users/\+John/\+Desktop/code/graph.\+c}}
+
+
+Implementation of \mbox{\hyperlink{dijkstra_8h_source}{dijkstra.\+h}}.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}dijkstra.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{graph_8c_a87d2d249191b00979501d8cf24ffa1db}{add\+Edge}} (\mbox{\hyperlink{structgraph__t}{graph\+\_\+t}} $\ast$g, int a, int b, int w)
+\item 
+\mbox{\Hypertarget{graph_8c_a10d86cc733d627244e73ee3f2e99fadb}\label{graph_8c_a10d86cc733d627244e73ee3f2e99fadb}} 
+\mbox{\hyperlink{structheap__t}{heap\+\_\+t}} $\ast$ {\bfseries create\+\_\+heap} (int n)
+\item 
+void \mbox{\hyperlink{graph_8c_ad8e698c8d9d972a073150337bc8eda13}{add\+Vertex}} (\mbox{\hyperlink{structgraph__t}{graph\+\_\+t}} $\ast$g, int i)
+\item 
+void \mbox{\hyperlink{graph_8c_ac33e86869f364eca8007e53a3fb13db6}{push\+Heap}} (\mbox{\hyperlink{structheap__t}{heap\+\_\+t}} $\ast$h, int v, int p)
+\item 
+int \mbox{\hyperlink{graph_8c_af6e69a9f795bd64cafca45ae7bdec753}{pop\+Heap}} (\mbox{\hyperlink{structheap__t}{heap\+\_\+t}} $\ast$h)
+\item 
+int \mbox{\hyperlink{graph_8c_af283cdfd5e872ff30831308b8798bdb6}{min}} (\mbox{\hyperlink{structheap__t}{heap\+\_\+t}} $\ast$h, int i, int j, int k)
+\item 
+void \mbox{\hyperlink{graph_8c_a5db1b622292b547c8544fe48199af6db}{dijkstra}} (\mbox{\hyperlink{structgraph__t}{graph\+\_\+t}} $\ast$g, int a, int b)
+\item 
+void \mbox{\hyperlink{graph_8c_a4ad389c549ff7f8a63c22c1c1d016a6d}{print\+Path}} (\mbox{\hyperlink{structgraph__t}{graph\+\_\+t}} $\ast$g, int i)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of \mbox{\hyperlink{dijkstra_8h_source}{dijkstra.\+h}}. 
+
+\begin{DoxyAuthor}{Author}
+John Buckley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 27, 2018 The implementation of functions from \mbox{\hyperlink{dijkstra_8h_source}{dijkstra.\+h}} to be used to find shortest path using Dijkstra\textquotesingle{}s algorithm
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+John Buckley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 27, 2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{graph_8c_a87d2d249191b00979501d8cf24ffa1db}\label{graph_8c_a87d2d249191b00979501d8cf24ffa1db}} 
+\index{graph.\+c@{graph.\+c}!add\+Edge@{add\+Edge}}
+\index{add\+Edge@{add\+Edge}!graph.\+c@{graph.\+c}}
+\subsubsection{\texorpdfstring{add\+Edge()}{addEdge()}}
+{\footnotesize\ttfamily void add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgraph__t}{graph\+\_\+t}} $\ast$}]{g,  }\item[{int}]{a,  }\item[{int}]{b,  }\item[{int}]{w }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+John Buckley 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & a \\
+\hline
+{\em int} & b \\
+\hline
+{\em int} & w \\
+\hline
+{\em \mbox{\hyperlink{structgraph__t}{graph\+\_\+t}}} & $\ast$g \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/27/2018 
+\end{DoxyDate}
+\mbox{\Hypertarget{graph_8c_ad8e698c8d9d972a073150337bc8eda13}\label{graph_8c_ad8e698c8d9d972a073150337bc8eda13}} 
+\index{graph.\+c@{graph.\+c}!add\+Vertex@{add\+Vertex}}
+\index{add\+Vertex@{add\+Vertex}!graph.\+c@{graph.\+c}}
+\subsubsection{\texorpdfstring{add\+Vertex()}{addVertex()}}
+{\footnotesize\ttfamily void add\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgraph__t}{graph\+\_\+t}} $\ast$}]{g,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+John Buckley 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & i \\
+\hline
+{\em \mbox{\hyperlink{structgraph__t}{graph\+\_\+t}}} & $\ast$g \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/27/2018 
+\end{DoxyDate}
+\mbox{\Hypertarget{graph_8c_a5db1b622292b547c8544fe48199af6db}\label{graph_8c_a5db1b622292b547c8544fe48199af6db}} 
+\index{graph.\+c@{graph.\+c}!dijkstra@{dijkstra}}
+\index{dijkstra@{dijkstra}!graph.\+c@{graph.\+c}}
+\subsubsection{\texorpdfstring{dijkstra()}{dijkstra()}}
+{\footnotesize\ttfamily void dijkstra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgraph__t}{graph\+\_\+t}} $\ast$}]{g,  }\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+John Buckley 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structgraph__t}{graph\+\_\+t}}} & $\ast$g \\
+\hline
+{\em int} & a \\
+\hline
+{\em int} & b \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/27/2018 
+\end{DoxyDate}
+\mbox{\Hypertarget{graph_8c_af283cdfd5e872ff30831308b8798bdb6}\label{graph_8c_af283cdfd5e872ff30831308b8798bdb6}} 
+\index{graph.\+c@{graph.\+c}!min@{min}}
+\index{min@{min}!graph.\+c@{graph.\+c}}
+\subsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily int min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structheap__t}{heap\+\_\+t}} $\ast$}]{h,  }\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{k }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+John Buckley 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structheap__t}{heap\+\_\+t}}} & $\ast$h \\
+\hline
+{\em int} & i \\
+\hline
+{\em int} & j \\
+\hline
+{\em int} & k \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/27/2018 
+\end{DoxyDate}
+\mbox{\Hypertarget{graph_8c_af6e69a9f795bd64cafca45ae7bdec753}\label{graph_8c_af6e69a9f795bd64cafca45ae7bdec753}} 
+\index{graph.\+c@{graph.\+c}!pop\+Heap@{pop\+Heap}}
+\index{pop\+Heap@{pop\+Heap}!graph.\+c@{graph.\+c}}
+\subsubsection{\texorpdfstring{pop\+Heap()}{popHeap()}}
+{\footnotesize\ttfamily int pop\+Heap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structheap__t}{heap\+\_\+t}} $\ast$}]{h }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+John Buckley 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structheap__t}{heap\+\_\+t}}} & $\ast$h \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/27/2018 
+\end{DoxyDate}
+\mbox{\Hypertarget{graph_8c_a4ad389c549ff7f8a63c22c1c1d016a6d}\label{graph_8c_a4ad389c549ff7f8a63c22c1c1d016a6d}} 
+\index{graph.\+c@{graph.\+c}!print\+Path@{print\+Path}}
+\index{print\+Path@{print\+Path}!graph.\+c@{graph.\+c}}
+\subsubsection{\texorpdfstring{print\+Path()}{printPath()}}
+{\footnotesize\ttfamily void print\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgraph__t}{graph\+\_\+t}} $\ast$}]{g,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+John Buckley 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structgraph__t}{graph\+\_\+t}}} & $\ast$g \\
+\hline
+{\em int} & i \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/27/2018 
+\end{DoxyDate}
+\mbox{\Hypertarget{graph_8c_ac33e86869f364eca8007e53a3fb13db6}\label{graph_8c_ac33e86869f364eca8007e53a3fb13db6}} 
+\index{graph.\+c@{graph.\+c}!push\+Heap@{push\+Heap}}
+\index{push\+Heap@{push\+Heap}!graph.\+c@{graph.\+c}}
+\subsubsection{\texorpdfstring{push\+Heap()}{pushHeap()}}
+{\footnotesize\ttfamily void push\+Heap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structheap__t}{heap\+\_\+t}} $\ast$}]{h,  }\item[{int}]{v,  }\item[{int}]{p }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+John Buckley 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structheap__t}{heap\+\_\+t}}} & $\ast$h \\
+\hline
+{\em int} & v \\
+\hline
+{\em int} & p \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/27/2018 
+\end{DoxyDate}
